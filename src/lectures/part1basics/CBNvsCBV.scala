@@ -23,3 +23,4 @@ object CBNvsCBV extends App {
 //  printFirst(infinite(), 34)
   printFirst(34, infinite())
 }
+
