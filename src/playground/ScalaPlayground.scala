@@ -4,9 +4,9 @@ import scala.util.control.Breaks._
 
 object ScalaPlayground extends App {
 
-  val calc = new Calculator()
+  val calc = new Calculator
 
-  calc.userOptions()
+  calc.userOptions
 
   while (true) {
     val input = scala.io.StdIn.readLine()
@@ -17,9 +17,9 @@ object ScalaPlayground extends App {
   }
 }
 
-class Calculator() {
+class Calculator {
 
-  def askForNumbers(): String = {
+  def askForNumbers: String = {
     /**
      * Asks user for two numbers
      * returns the numbers in form of a String
@@ -31,22 +31,22 @@ class Calculator() {
     finNum
   }
 
-  def readInNumbers(): (Int, Int) = {
+  def readInNumbers: (Int, Int) = {
     /**
      * Here we take the return value from askForNumbers()
      * and split them into
      */
-    val listNum: String = askForNumbers()
+    val listNum: String = askForNumbers
     val Array(x, y) = listNum.split("\\s+").map(_.toInt)
     (x, y)
   }
 
-  def wouldYouLikeToContinue(): String = {
+  def wouldYouLikeToContinue: String = {
     val cont: String = "Would you like to Continue? "
     cont
   }
 
-  def userOptions(): Unit = {
+  def userOptions: Unit = {
     println("Please Choose ONE of the following options (Enter Number)")
     println("To quit, please type 'quit'")
     println("1. Multiplication")
@@ -59,48 +59,48 @@ class Calculator() {
   def userInput(input: String) = {
 
     if (input == "1") {
-      multiplication()
+      multiplication
       println("Please choose a new option from the above")
     }
 
     else if (input == "2") {
-      division()
+      division
       println("Please choose a new option from the above")
     }
 
     else if (input == "3") {
-      addition()
+      addition
       println("Please choose a new option from the above")
     }
 
     else if (input == "4") {
-      subtraction()
+      subtraction
       println("Please choose a new option from the above")
     }
 
     else if (input == "5") {
-      squareRoot()
+      squareRoot
       println("Please choose a new option from the above")
     }
   }
 
-  def multiplication(): Unit = {
+  def multiplication: Unit = {
     /**
      * Multiplies two numbers together
      */
 
-    val Array = readInNumbers()
+    val Array = readInNumbers
 
     println(Array._1 * Array._2)
   }
 
-  def division(): Unit = {
+  def division: Unit = {
     /**
      * Divides two numbers
      */
     try
       {
-        val Array = readInNumbers()
+        val Array = readInNumbers
         println(Array._1 / Array._2)
       }
     catch
@@ -111,37 +111,37 @@ class Calculator() {
       }
   }
 
-  def addition(): Unit = {
+  def addition: Unit = {
     /**
      * Adds two numbers
      */
 
-    val Array = readInNumbers()
+    val Array = readInNumbers
 
     println(Array._1 + Array._2)
   }
 
-  def subtraction(): Unit = {
+  def subtraction: Unit = {
     /**
      * Subtracts two numbers
      */
 
-    val Array = readInNumbers()
+    val Array = readInNumbers
 
     println(Array._1 - Array._2)
   }
 
-  def squareRoot(): Unit = {
-    val Array = readInNumbers()
+  def squareRoot: Unit = {
+    val Array = readInNumbers
 
     println(s"The square root for ${Array._1} is ${sqrt(Array._1)}")
     println(s"The square root for ${Array._2} is ${sqrt(Array._2)}")
   }
 
-  def main(ars: Array[Int]): Unit = {
+  def main(args: Array[Int]): Unit = {
     val calc = new Calculator()
 
-    calc.userOptions()
+    calc.userOptions
 
     val input = scala.io.StdIn.readLine()
     while (true) {
