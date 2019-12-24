@@ -4,12 +4,6 @@ import scala.util.control.Breaks._
 
 object ScalaPlayground extends App {
 
-//  val multiply: Unit = calc.multiplication()
-//  val division: Unit = calc.division()
-//  val addition: Unit = calc.addition()
-//  val subtraction: Unit = calc.subtraction()
-//  val squareRoot: Unit = calc.squareRoot()
-
   val calc = new Calculator()
 
   calc.userOptions()
