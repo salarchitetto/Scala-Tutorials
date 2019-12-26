@@ -26,6 +26,7 @@ class Calculator {
      */
     println("Please input two numbers to the Console: ")
 
+
     val num = scala.io.StdIn.readLine()
     val finNum = num.toString
     finNum
@@ -36,14 +37,14 @@ class Calculator {
      * Here we take the return value from askForNumbers()
      * and split them into
      */
-    val listNum: String = askForNumbers
-    val Array(x, y) = listNum.split("\\s+").map(_.toInt)
-    (x, y)
-  }
 
-  def wouldYouLikeToContinue: String = {
-    val cont: String = "Would you like to Continue? "
-    cont
+    val listNum: String = askForNumbers
+    try {
+      val Array(x, y) = listNum.split("\\s+").map(_.toInt)
+      (x, y)
+    } catch {
+      case e: NumberFormatException => (0,0)
+    }
   }
 
   def userOptions: Unit = {
